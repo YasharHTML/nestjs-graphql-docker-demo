@@ -1,6 +1,4 @@
-import { ConfigService } from '@nestjs/config';
 import { TypeOrmModuleOptions } from '@nestjs/typeorm';
-import { Post } from 'src/resources/post/entities/post.entity';
 
 export const TypeOrmConfig: () => TypeOrmModuleOptions = () => ({
   type: 'postgres',
@@ -10,5 +8,5 @@ export const TypeOrmConfig: () => TypeOrmModuleOptions = () => ({
   port: +process.env.DB_PORT,
   database: process.env.DB_NAME,
   synchronize: process.env.DB_SYNC === 'Y',
-  entities: [Post]
+  autoLoadEntities: true,
 });
