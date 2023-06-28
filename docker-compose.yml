@@ -1,4 +1,4 @@
-version: '2'
+version: '3.8'
 services:
   app:
     depends_on:
@@ -24,4 +24,4 @@ services:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=12345678
     ports:
-      - '5432:5432'
+      - '127.0.0.1:5432:5432'
